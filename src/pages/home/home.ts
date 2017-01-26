@@ -1,31 +1,39 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-
-
-import {RecordService} from '../../providers/record-service';
+import { ContentPage } from '../content/content';
+import {DatasetService} from '../../providers/dataset-service';
 
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-providers: [RecordService]
+providers: [DatasetService]
 })
 export class HomePage {
 
-  public records: any;
+  public datasets: any;
+  //public navCtrl : NavController;
+  //content: any = ContentPage;
 
-  constructor(public navCtrl: NavController, public recordService: RecordService) {
-	 this.loadRecord();
+  constructor(public navCtrl: NavController, public datasetService: DatasetService) {
+	 this.loadDatasets();
   }
 
 
- loadRecord(){
-    this.recordService.load()
-    .then(data => {
-      this.records = data;
+ loadDatasets(){
+    this.datasetService.load()
+    .then(datasets => {
+      this.datasets = datasets;
     });
+  }
+
+  datasetSelected(dataset) {
+    console.log(dataset.id + " selected");
+    this.navCtrl.push(ContentPage,
+      {dataset: dataset}
+    );
   }
 
 }

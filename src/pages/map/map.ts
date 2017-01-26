@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {RecordService} from '../../providers/record-service';
-import { Geolocation, GoogleMap, GoogleMapsEvent } from 'ionic-native';
+import { Geolocation, GoogleMap } from 'ionic-native';
 
 declare var google;
 
@@ -39,7 +39,7 @@ ngOnInit(){
 
 
  loadRecord(){
-    this.recordService.load()
+    this.recordService.load("580f95abe4b0f83baf145918")
     .then(data => {
       this.recordsLoaded=true;
       console.log("recordsLoaded ",this.recordsLoaded);
