@@ -6,6 +6,7 @@ import { MapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ContentListPage } from '../pages/content-list/content-list';
+import { ContentDetailPage } from '../pages/content-detail/content-detail';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContentListPage } from '../pages/content-list/content-list';
     MapPage,
     HomePage,
     TabsPage,
-    ContentListPage
+    ContentListPage,
+    ContentDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +28,8 @@ import { ContentListPage } from '../pages/content-list/content-list';
     MapPage,
     HomePage,
     TabsPage,
-    ContentListPage
+    ContentListPage,
+    ContentDetailPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

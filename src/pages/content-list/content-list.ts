@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-
 import { NavController, NavParams } from 'ionic-angular';
-
-
 import {RecordService} from '../../providers/record-service';
+import { ContentDetailPage } from '../content-detail/content-detail';
 
 
 
@@ -30,4 +28,10 @@ export class ContentListPage {
     });
   }
 
+   recordSelected(record) {
+    console.log(record.id + " selected");
+    this.navCtrl.push(ContentDetailPage,
+      {record: record}
+    );
+  }
 }

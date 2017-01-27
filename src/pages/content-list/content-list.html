@@ -5,13 +5,28 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Elenco defibrillaori del comune di Lecce</h2>
+  <h2>{{selectedDataset._name}}</h2>
   <ion-list>
-    <ion-item *ngFor="let record of records">
+    <button ion-item *ngFor="let record of records" (click)="recordSelected(record)">
+    <!--<ion-item *ngFor="let record of records">-->
+
+      <ion-thumbnail item-left>
+        <img src="{{record._main_image}}">
+      </ion-thumbnail>
+      <h2>{{record._title}}</h2>
+      <p>{{record._description}}</p>
+
+      <!--<button ion-button clear item-right>View</button>-->
+
+
+    <!--
 
       <h2>{{record.id}}</h2>
       <p>descr: {{record._description}}</p>
-    </ion-item>
+
+-->
+   <!-- </ion-item>-->
+    </button>
   </ion-list>
 
 </ion-content>
