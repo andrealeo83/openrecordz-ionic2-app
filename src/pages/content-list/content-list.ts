@@ -8,11 +8,11 @@ import {RecordService} from '../../providers/record-service';
 
 
 @Component({
-  selector: 'page-content',
-  templateUrl: 'content.html',
+  selector: 'page-content-list',
+  templateUrl: 'content-list.html',
   providers: [RecordService]
 })
-export class ContentPage {
+export class ContentListPage {
 
   public records: any;
   selectedDataset: any;

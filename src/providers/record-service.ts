@@ -28,7 +28,7 @@ load(datasetId) {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-	this.http.get('http://lecce.api.openrecordz.com/service/v1/datasets/'+datasetId)
+	this.http.get('http://defibrillatoricomunedilecce1234.api.openrecordz.com/service/v1/datasets/'+datasetId)
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data

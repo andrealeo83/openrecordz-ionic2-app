@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { ContentPage } from '../content/content';
+import { ContentListPage } from '../content-list/content-list';
 import {DatasetService} from '../../providers/dataset-service';
 
 
@@ -31,7 +31,7 @@ export class HomePage {
 
   datasetSelected(dataset) {
     console.log(dataset.id + " selected");
-    this.navCtrl.push(ContentPage,
+    this.navCtrl.push(ContentListPage,
       {dataset: dataset}
     );
   }
