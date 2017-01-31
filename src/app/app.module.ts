@@ -19,7 +19,10 @@ import { ContentDetailPage } from '../pages/content-detail/content-detail';
     ContentDetailPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,
+     {
+      urlApi: 'http://defibrillatoricomunedilecce1234.api.openrecordz.com/service/v1',
+     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

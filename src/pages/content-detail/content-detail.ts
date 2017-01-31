@@ -15,10 +15,10 @@ import {RecordService} from '../../providers/record-service';
 export class ContentDetailPage {
 
   //public records: any;
-  selectedRecord: any;
+  record: any;
 
   constructor(public navCtrl: NavController, public recordService: RecordService, public navParams: NavParams) {
-	 this.selectedRecord = navParams.get('record');
+	 this.record = navParams.get('record');
    //this.loadRecord(this.selectedDataset.id);
   }
 

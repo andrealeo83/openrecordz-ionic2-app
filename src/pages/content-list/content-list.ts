@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {RecordService} from '../../providers/record-service';
 import { ContentDetailPage } from '../content-detail/content-detail';
+import * as moment from 'moment';
 
 
 
