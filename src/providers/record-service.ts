@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RecordService {
 
-  data: any;
+  //data: any;
   urlApi: String;
 
   constructor(public http: Http, config: Config) {
@@ -21,7 +21,7 @@ export class RecordService {
     console.log("urlApi : "+ this.urlApi);
   }
 
-load(datasetId) {
+load(datasetId:String, page:number=0) {
  // if (this.data) {
     // already loaded data
   //  return Promise.resolve(this.data);
@@ -32,14 +32,19 @@ load(datasetId) {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-	this.http.get(this.urlApi+'/datasets/'+datasetId)
+	this.http.get(this.urlApi+'/datasets/'+datasetId+'?page='+page)
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
         // and save the data for later reference
-        //this.data = data;
-        this.data = this.applyHaversine(data);
-        resolve(this.data);
+      //  this.data = data;
+      //resolve(this.data);
+
+      resolve(data);
+
+     /*   this.data = this.applyHaversine(data);
+        */
+
       });
   });
 }
